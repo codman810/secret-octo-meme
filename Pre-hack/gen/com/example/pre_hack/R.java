@@ -219,6 +219,9 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020020;
     }
     public static final class id {
+        public static final int @string/first_place=0x7f040005;
+        public static final int @string/second_place=0x7f040003;
+        public static final int @string/third_place=0x7f040004;
         public static final int action_settings=0x7f040024;
         public static final int authButton=0x7f04000d;
         public static final int button1=0x7f040006;
@@ -253,9 +256,6 @@ containing a value of this type.
         public static final int picker_subtitle=0x7f04001e;
         public static final int profile_pic=0x7f04000b;
         public static final int small=0x7f040000;
-        public static final int textView2=0x7f040003;
-        public static final int textView3=0x7f040004;
-        public static final int textView4=0x7f040005;
         public static final int textView5=0x7f04000a;
         public static final int textView6=0x7f04000c;
     }
@@ -275,6 +275,7 @@ containing a value of this type.
         public static final int com_facebook_placepickerfragment_list_row=0x7f03000c;
         public static final int com_facebook_search_bar_layout=0x7f03000d;
         public static final int com_facebook_usersettingsfragment=0x7f03000e;
+        public static final int ranking=0x7f03000f;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -311,6 +312,8 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f070009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
         public static final int feed_page=0x7f070022;
+        public static final int first_place=0x7f070027;
+        public static final int fourth_place=0x7f07002a;
         public static final int hello_world=0x7f07001c;
         public static final int profile_name=0x7f07001d;
         public static final int profile_page=0x7f070023;
@@ -319,6 +322,8 @@ containing a value of this type.
         public static final int ranking_page=0x7f070024;
         public static final int score=0x7f07001e;
         public static final int score_int=0x7f07001f;
+        public static final int second_place=0x7f070028;
+        public static final int third_place=0x7f070029;
     }
     public static final class style {
         /** 
