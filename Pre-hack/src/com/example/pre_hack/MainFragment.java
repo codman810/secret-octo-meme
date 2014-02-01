@@ -7,6 +7,11 @@ import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import twitter4j.*;
 
 import com.facebook.HttpMethod;
 import com.facebook.Request;
@@ -15,6 +20,7 @@ import com.facebook.Response;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 
+import android.net.wifi.WifiConfiguration.Status;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -38,6 +44,7 @@ public class MainFragment extends Fragment{
 	
 	 private String userFacebookId;
 	 private ImageView profImage;
+	 private TextView name;
 	 private String profileName;
 	 private TextView likesTV;
 	 private String likes;
@@ -47,6 +54,7 @@ public class MainFragment extends Fragment{
 	    View view = inflater.inflate(R.layout.activity_main, container, false);
 	    //profilePic = (ProfilePictureView) MainFragment.findViewById(R.id.profilepic);
 	    LoginButton authButton = (LoginButton) view.findViewById(R.id.authButton);
+	    name = (TextView)view.findViewById(R.id.name);
 	    likesTV = (TextView)view.findViewById(R.id.likes);
 	    profImage =(ImageView)view.findViewById(R.id.profile_pic);
 	    authButton.setFragment(this);
@@ -64,6 +72,7 @@ public class MainFragment extends Fragment{
 	                    if (user != null) {
 	                    	userFacebookId = user.getId();//user id
 	                        profileName = user.getName();//user's profile name
+	                        
 	                       
 	                    }   
 	                }   
@@ -87,7 +96,7 @@ public class MainFragment extends Fragment{
 	        
 	    }  
 	    
-	    
+	    name.setText(profileName);
 	    return view;
 	}
 	
@@ -111,6 +120,45 @@ public class MainFragment extends Fragment{
 	   return bitmap;
 	}
 	
+	//twitter
 	
+	
+	public static boolean isMonthAgo(Date date) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.add( Calendar.MONTH ,  -1 );
+		return date.compareTo( calendar.getTime() ) < 0;
+	}
+	
+	public static int getRTweetCount(String screenName) throws TwitterException {
+		
+		int rtCount = 0;
+		Twitter twitter = TwitterFactory.getSingleton();
+	    ResponseList<twitter4j.Status> statuses = twitter.getUserTimeline(screenName);
+	    for (twitter4j.Status status : statuses) {
+	    	if (isMonthAgo(status.getCreatedAt())) {
+	    		rtCount += status.getRetweetCount();
+	    	}
+	    	else {
+	    		break;
+	    	}
+	    }
+	    return rtCount;
+	}
+	
+	public static int getFavoritesCount(String screenName) throws TwitterException {
+		
+		int faveCount = 0;
+		Twitter twitter = TwitterFactory.getSingleton();
+	    ResponseList<twitter4j.Status> statuses = twitter.getUserTimeline(screenName);
+	    for (twitter4j.Status status : statuses) {
+	    	if (isMonthAgo(status.getCreatedAt())) {
+	    		faveCount += status.getFavoriteCount();
+	    	}
+	    	else {
+	    		break;
+	    	}
+	    }
+	    return faveCount;
+	}
 	
 }
