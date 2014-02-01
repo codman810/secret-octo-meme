@@ -248,11 +248,11 @@ containing a value of this type.
         public static final int large=0x7f040002;
         public static final int likes=0x7f04000e;
         public static final int login=0x7f040025;
+        public static final int name=0x7f040009;
         public static final int normal=0x7f040001;
         public static final int picker_subtitle=0x7f04001e;
         public static final int profile_pic=0x7f04000b;
         public static final int small=0x7f040000;
-        public static final int textView1=0x7f040009;
         public static final int textView2=0x7f040003;
         public static final int textView3=0x7f040004;
         public static final int textView4=0x7f040005;
