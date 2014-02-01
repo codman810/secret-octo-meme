@@ -4,5 +4,14 @@
     <string name="app_name">Pre-hack</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="profile_name">Firstname Lastname</string>
+    <string name="score">Score: </string>
+    <string name="score_int"></string>
+    <string name="account_count">Facebook: \nTwitter: </string>
+    <string name="profile_pic"></string>
+    <string name="feed_page">Feed</string>
+    <string name="profile_page">Profile</string>
+    <string name="ranking_page">Ranking</string>
+    <string name="achievements">Achievements</string>
+    <string name="rank">Rank</string>
 </resources>
