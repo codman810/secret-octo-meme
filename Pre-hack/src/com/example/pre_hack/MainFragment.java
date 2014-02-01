@@ -38,6 +38,7 @@ public class MainFragment extends Fragment{
 	
 	 private String userFacebookId;
 	 private ImageView profImage;
+	 private TextView name;
 	 private String profileName;
 	 private TextView likesTV;
 	 private String likes;
@@ -47,6 +48,7 @@ public class MainFragment extends Fragment{
 	    View view = inflater.inflate(R.layout.activity_main, container, false);
 	    //profilePic = (ProfilePictureView) MainFragment.findViewById(R.id.profilepic);
 	    LoginButton authButton = (LoginButton) view.findViewById(R.id.authButton);
+	    name = (TextView)view.findViewById(R.id.name);
 	    likesTV = (TextView)view.findViewById(R.id.likes);
 	    profImage =(ImageView)view.findViewById(R.id.profile_pic);
 	    authButton.setFragment(this);
@@ -64,6 +66,7 @@ public class MainFragment extends Fragment{
 	                    if (user != null) {
 	                    	userFacebookId = user.getId();//user id
 	                        profileName = user.getName();//user's profile name
+	                        
 	                       
 	                    }   
 	                }   
@@ -87,7 +90,7 @@ public class MainFragment extends Fragment{
 	        
 	    }  
 	    
-	    
+	    name.setText(profileName);
 	    return view;
 	}
 	
